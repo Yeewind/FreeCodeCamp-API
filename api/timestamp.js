@@ -5,7 +5,6 @@ var router = express.Router()
 
 router.get('/:time', function (req, res) {
   var time = req.params.time;
-  
   //determin type of input
   if (/\D/.test(time)) {
     //netural date
@@ -25,8 +24,7 @@ router.get('/:time', function (req, res) {
     output.unix = time / 1000;
     output.natural = strftime('%B %d, %Y', new Date(time));
   }
-
-  res.end(JSON.stringify(output));
+  res.json(output);
     
   });
 
