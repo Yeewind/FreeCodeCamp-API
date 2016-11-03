@@ -1,10 +1,8 @@
 var express = require('express')
 var app = express()
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+app.use('/timestamp/', require('./api/timestamp.js'));
+app.use('/requestheaderparser', require('./api/request_header_parser.js'));
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 3000!')
-})
+
+app.listen(8080);
