@@ -1,10 +1,8 @@
 var express = require('express')
 var app = express()
-var strftime = require('strftime')
 var router = express.Router()
 
 router.get('/', function (req, res) {
-  console.log(req);
   var output = {
     IP: req.headers['x-forwarded-for'],
     language: req.headers['accept-language'],
